@@ -25,7 +25,7 @@ source "amazon-ebs" "nginx-git" {
 
 
 #-----------------------------
-# source: how we build the AMI For Nginx and GIT 
+# source: how we build the AMI For Java and GIT 
 #-----------------------------
 
 source "amazon-ebs" "java-git" {
