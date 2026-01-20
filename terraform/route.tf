@@ -10,12 +10,12 @@ resource "aws_route_table" "week5-rt" {
   vpc_id = aws_vpc.week5-vpc.id
 
   route {
-    cidr_block = aws_subnet.public-week5-subnet.cidr_block
-    gateway_id = aws_internet_gateway.gw.id
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.week5-igw.id
   }
 
   tags = {
-    Name = "week5-rt"
+    Name = "public-rt"
   }
 }
 
