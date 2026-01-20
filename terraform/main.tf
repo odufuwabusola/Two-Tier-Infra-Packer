@@ -19,8 +19,8 @@ provider "aws" {
 resource "aws_instance" "nginx-node" {
   ami                    = "ami-07ff62358b87c7116"
   instance_type          = "t3.micro"
-  subnet_id              = "aws_subnet.public-week5-subnet.id"
-  vpc_security_group_ids = ["aws_security_group.allow_tls.id"]
+  subnet_id              = aws_subnet.public-week5-subnet.id
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
   key_name               = "MasterClass2026"
 
   tags = {

@@ -31,8 +31,8 @@ resource "aws_subnet" "private-week5-subnet" {
 resource "aws_instance" "nginx" {
   ami           = "resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
   instance_type = "t3.micro"
-  subnet_id              = "aws_subnet.public-week5-subnet.id"
-  vpc_security_group_ids = ["aws_security_group.allow_tls.id"]
+  subnet_id              = aws_subnet.public-week5-subnet.id
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
   key_name               = "MasterClass2026"
   tags = {
     Name = "Nginx"
@@ -42,8 +42,8 @@ resource "aws_instance" "nginx" {
 resource "aws_instance" "python" {
   ami           = "resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
   instance_type = "t3.micro"
-  subnet_id              = "aws_subnet.private-week5-subnet.id"
-  vpc_security_group_ids = ["aws_security_group.allow_tls.id"]
+  subnet_id              = aws_subnet.private-week5-subnet.id
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
   key_name               = "MasterClass2026"
   tags = {
     Name = "python"
