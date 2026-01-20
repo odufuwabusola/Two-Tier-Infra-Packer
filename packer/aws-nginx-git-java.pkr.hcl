@@ -18,7 +18,7 @@ source "amazon-ebs" "nginx-git" {
     region = "us-east-1"
     instance_type = "t3.micro"
     ssh_username = "ec2-user"
-    source_ami  = "ami-0e1ec3a7cf33c33a5"
+    source_ami  = "ami-07ff62358b87c7116"
     ami_name = "nginx-git-image2"
     ami_virtualization_type  = "hvm"
 }
@@ -32,8 +32,8 @@ source "amazon-ebs" "java-git" {
     region = "us-east-1"
     instance_type = "t3.micro"
     ssh_username = "ec2-user"
-    source_ami  = "ami-0e1ec3a7cf33c33a5" 
-    ami_name = "java-git-by-packer-v2"
+    source_ami  = "ami-07ff62358b87c7116"
+    ami_name = "java-git-by-packer-2"
     ami_virtualization_type  = "hvm"
 }
 
