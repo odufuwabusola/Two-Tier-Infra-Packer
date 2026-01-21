@@ -11,7 +11,7 @@ resource "aws_vpc" "week5-vpc" {
 resource "aws_subnet" "public-week5-subnet" {
   vpc_id            = aws_vpc.week5-vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
+  availability_zone = "eu-west-1a"
 
   tags = {
     Name = "public-week5-subnet"
@@ -21,7 +21,7 @@ resource "aws_subnet" "public-week5-subnet" {
 resource "aws_subnet" "private-week5-subnet" {
   vpc_id            = aws_vpc.week5-vpc.id
   cidr_block        = "10.0.2.0/24"
-  availability_zone = "us-east-1b"
+  availability_zone = "eu-west-1b"
 
   tags = {
     Name = "private-week5-subnet"
