@@ -55,6 +55,7 @@ resource "aws_instance" "nginx-node" {
 resource "aws_security_group" "nginx_web" {
 
   ingress {
+    description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -62,6 +63,7 @@ resource "aws_security_group" "nginx_web" {
   }
 
   ingress {
+    description = "HTTP"
     from_port   = 80
     to_port     = 80
     protocol    = "http"
@@ -79,6 +81,7 @@ resource "aws_security_group" "nginx_web" {
 resource "aws_security_group" "java_web" {
 
   ingress {
+    description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -86,6 +89,7 @@ resource "aws_security_group" "java_web" {
   }
 
   ingress {
+    description = "HTTP"
     from_port   = 9090
     to_port     = 9090
     protocol    = "http"
@@ -103,6 +107,7 @@ resource "aws_security_group" "java_web" {
 resource "aws_security_group" "python_web" {
 
   ingress {
+    description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -110,6 +115,7 @@ resource "aws_security_group" "python_web" {
   }
 
   ingress {
+    description = "HTTP"
     from_port   = 8080
     to_port     = 8080
     protocol    = "http"
