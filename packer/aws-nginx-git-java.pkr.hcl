@@ -77,6 +77,18 @@ build  {
 }
 
 build  {
+    name  = "python-git-ami-build"
+    sources = [
+        "source.amazon-ebs.python-git"
+    ]
+
+    provisioner "shell" {
+        inline = [
+            
+        ]
+    }
+
+build  {
     name  = "java-git-ami-build"
     sources = [
         "source.amazon-ebs.java-git"
