@@ -81,7 +81,7 @@ build  {
     sources = [
         "source.amazon-ebs.python-git"
     ]
-
+}
     provisioner "shell" {
         inline = [
             
