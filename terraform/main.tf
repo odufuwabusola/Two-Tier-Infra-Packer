@@ -66,7 +66,7 @@ resource "aws_security_group" "nginx_web" {
     description = "HTTP"
     from_port   = 80
     to_port     = 80
-    protocol    = "http"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -92,7 +92,7 @@ resource "aws_security_group" "java_web" {
     description = "HTTP"
     from_port   = 9090
     to_port     = 9090
-    protocol    = "http"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -118,7 +118,7 @@ resource "aws_security_group" "python_web" {
     description = "HTTP"
     from_port   = 8080
     to_port     = 8080
-    protocol    = "http"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
