@@ -56,7 +56,6 @@ resource "aws_instance" "nginx-node" {
 }
 
 resource "aws_security_group" "nginx_web" {
-  vpc_id = aws_vpc.this.id
 
   ingress {
     from_port   = 22
@@ -81,7 +80,6 @@ resource "aws_security_group" "nginx_web" {
 }
 
 resource "aws_security_group" "java_web" {
-  vpc_id = aws_vpc.this.id
 
   ingress {
     from_port   = 22
@@ -106,7 +104,6 @@ resource "aws_security_group" "java_web" {
 }
 
 resource "aws_security_group" "python_web" {
-  vpc_id = aws_vpc.this.id
 
   ingress {
     from_port   = 22
