@@ -15,7 +15,7 @@ packer {
 #-----------------------------------------------
 
 source "amazon-ebs" "nginx-git" {
-    region = "eu-west-1"
+    region = "us-east-1"
     instance_type = "t3.micro"
     ssh_username = "ec2-user"
     source_ami  = "ami-03e091ef64f3907f8"
@@ -23,13 +23,24 @@ source "amazon-ebs" "nginx-git" {
     ami_virtualization_type  = "hvm"
 }
 
+#----------------------------------------------
+# source: how we build the AMI For Java and GIT 
+#----------------------------------------------
 
+source "amazon-ebs" "python-git" {
+    region = "us-east-1"
+    instance_type = "t3.micro"
+    ssh_username = "ec2-user"
+    source_ami  = "ami-03e091ef64f3907f8"
+    ami_name = "python-git-by-packer2"
+    ami_virtualization_type  = "hvm"
+}
 #----------------------------------------------
 # source: how we build the AMI For Java and GIT 
 #----------------------------------------------
 
 source "amazon-ebs" "java-git" {
-    region = "eu-west-1"
+    region = "us-east-1"
     instance_type = "t3.micro"
     ssh_username = "ec2-user"
     source_ami  = "ami-03e091ef64f3907f8"
